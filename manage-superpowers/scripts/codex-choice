@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+codex_bin="${CODEX_BIN:-codex}"
+cleanup_prompt='Use $manage-superpowers to perform full local Superpowers cleanup now: remove superpowers@openai-curated, delete only its active cache, leave every other plugin untouched, and verify plugin status, cache absence, and config references.'
+
+usage() {
+  printf '%s\n' \
+    'Usage: codex-choice [--clean-after-start|--normal] [CODEX_OPTIONS...]' \
+    '' \
+    '  --clean-after-start  Start Codex normally and make Superpowers cleanup the first request.' \
+    '  --normal             Start Codex normally without an automatic cleanup request.' \
+    '' \
+    'Do not pass another positional prompt with --clean-after-start.'
+}
+
+mode=""
+if [[ $# -gt 0 ]]; then
+  case "$1" in
+    --clean-after-start|--normal)
+      mode="$1"
+      shift
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+  esac
+fi
+
+if [[ -z "$mode" ]]; then
+  printf '%s\n' \
+    '请选择本次 Codex 启动方式：' \
+    '  1) 正常启动全部插件，并把清理 Superpowers 作为第一条请求（推荐）' \
+    '  2) 正常启动，不自动清理 Superpowers' \
+    '  q) 取消'
+  read -r -p '选择 [1/2/q]: ' choice
+  case "$choice" in
+    1) mode="--clean-after-start" ;;
+    2) mode="--normal" ;;
+    q|Q) exit 0 ;;
+    *)
+      printf '无效选择：%s\n' "$choice" >&2
+      exit 2
+      ;;
+  esac
+fi
+
+case "$mode" in
+  --clean-after-start)
+    exec "$codex_bin" "$@" "$cleanup_prompt"
+    ;;
+  --normal)
+    exec "$codex_bin" "$@"
+    ;;
+esac

@@ -1,0 +1,13 @@
+/*
+!/.gitignore
+!/README.md
+!/analyze-code/
+!/analyze-code/**
+!/manage-superpowers/
+!/manage-superpowers/**
+!/publish-to-ai-infra-wiki/
+!/publish-to-ai-infra-wiki/**
+!/save-answer-as-markdown/
+!/save-answer-as-markdown/**
+!/weekly-report-ppt/
+!/weekly-report-ppt/**

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Weekly Report PPT"
+  short_description: "Create concise weekly PPTs from supplied templates"
+  default_prompt: "Use $weekly-report-ppt with my PPTX template and supplied content or reference paths to create a concise weekly report."

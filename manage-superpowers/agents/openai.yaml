@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manage Superpowers"
+  short_description: "启动后清理并审计 Superpowers，保留其他插件"
+  default_prompt: "Use $manage-superpowers to remove Superpowers now, clean its active cache, and verify the result while leaving other plugins untouched."

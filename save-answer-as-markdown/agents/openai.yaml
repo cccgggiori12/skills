@@ -1,0 +1,4 @@
+interface:
+  display_name: "Save Answer as Markdown"
+  short_description: "Turn prior answers into Markdown docs"
+  default_prompt: "Use $save-answer-as-markdown to save the prior answer as a naturally structured Markdown document in the appropriate weekly folder."

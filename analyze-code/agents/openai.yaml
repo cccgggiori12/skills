@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze Code"
+  short_description: "Learn code through recursive minimum models"
+  default_prompt: "Use $analyze-code to explain this code at the right depth, beginning with the minimum sufficient mental model and recursively expanding only blocking prerequisites."

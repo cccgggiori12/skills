@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publish to AI Infra Wiki"
+  short_description: "Curate project learning notes into a reusable personal wiki"
+  default_prompt: "Use $publish-to-ai-infra-wiki to curate this learning note into my AI Infra wiki."
