@@ -1,0 +1,7 @@
+interface:
+  display_name: "技术学习工作流实验"
+  short_description: "用可回滚主题工作台组织跨会话技术学习与证据收束"
+  default_prompt: "Use $guide-technical-learning-experiment to start or resume a bounded technical-learning experiment."
+
+policy:
+  allow_implicit_invocation: false

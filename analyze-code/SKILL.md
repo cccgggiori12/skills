@@ -1,6 +1,6 @@
 ---
 name: analyze-code
-description: Analyze and teach source code at the appropriate scope and depth. Use when the user asks to understand, explain, trace, or learn a repository, module, subsystem, class, function, method, call chain, code block, single line or expression, macro, template, lambda, generated code, or configuration-driven behavior; support quick orientation, deep analysis, and recursive minimum-model learning when unfamiliar prerequisites or nested implementation layers block understanding.
+description: "Use when source code itself is the primary target: analyzing a named repository, path, symbol, snippet, generated artifact, build script, or configuration; tracing a call chain; verifying a claim against code; or when the user invokes $analyze-code. Do not use for general software concepts, logs, plans, summaries, or repository context alone. During an active $guide-technical-learning-experiment session, a named source object or brief evidence spot-check is insufficient; use only when the user explicitly requests dedicated source inspection, call-chain tracing, line-by-line analysis, or $analyze-code."
 ---
 
 # Analyze Code

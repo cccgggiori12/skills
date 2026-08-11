@@ -6,6 +6,7 @@ This repository tracks the locally authored Codex skills installed under
 ## Tracked skills
 
 - `analyze-code`
+- `guide-technical-learning-experiment`
 - `manage-superpowers`
 - `publish-to-ai-infra-wiki`
 - `save-answer-as-markdown`
