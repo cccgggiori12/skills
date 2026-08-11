@@ -33,6 +33,23 @@ A Wiki page should preserve:
 
 Transform rather than merely shorten. Several learning documents may become one Wiki page, and one broad learning document may yield several stable Wiki pages.
 
+### One knowledge object per page
+
+Each page should answer one stable core question that a reader can locate from its title. Split a
+page when major sections:
+
+- answer different core questions;
+- would naturally be searched under different titles; and
+- remain understandable and reusable without each other.
+
+Do not split by length alone. Keep examples, exceptions, one-off syntax, and supporting details in
+the parent page when they have no useful standalone retrieval target. The goal is precise
+navigation, not the largest possible page count or one page per minor term.
+
+For concept material, apply this atomicity check before separating the reusable concept from its
+project example. One broad source may produce multiple concept pages, and each page may retain its
+own clearly labeled project example.
+
 ## 3. Classification
 
 ### concepts
@@ -40,6 +57,25 @@ Transform rather than merely shorten. Several learning documents may become one 
 Use for independently reusable knowledge, including basic language syntax, ABI, linking, JIT/AOT, decorators, function pointers, or framework concepts.
 
 Do not require a concept page to link to the project where it was first learned. A relation is optional and must be useful rather than ceremonial.
+
+Separate the concept itself from the codebase that exposed it:
+
+```text
+remove the project name and the statement remains true
+    -> concept body
+
+the code demonstrates one valid realization
+    -> explicitly labeled project example
+
+the explanation depends on that project's call chain or state
+    -> project-understanding
+```
+
+A concept page may retain a useful real-code example, but label it as
+`项目实例：<project/topic>` or with an equally explicit marker. State that it is one
+implementation rather than the universal definition. If the example grows into a call chain,
+parameter-routing model, state machine, or module-responsibility explanation, move that material
+to `project-understanding/` and leave a short mapping link in the concept page.
 
 ### project-understanding
 
@@ -100,6 +136,11 @@ For source-grounded call chains, put the exact repository-relative source path b
 ## 6. Search and naming
 
 - Name pages after the knowledge object or question, not the study sequence.
+- Treat the minimum model as the default organization of the body, not as a default title suffix.
+  Do not append `最小模型` merely to label the page format; prefer titles such as
+  `ABI 与 API` that state the knowledge object directly.
+- Retain `模型` in a title only when the model itself is the knowledge object, or when the word
+  materially distinguishes this page from another artifact about the same subject.
 - Put the most important searchable symbols in the title or opening lines.
 - Include a compact keyword line only when the title is insufficient.
 - Use exact file paths and symbol names for source-grounded technical pages.
@@ -127,6 +168,10 @@ verification status
 ```
 
 Do not copy known-wrong or obsolete explanations into the Wiki. If evidence is incomplete, label the boundary explicitly.
+
+For concept pages derived from project work, separate the final evidence list into concept basis
+and project source evidence. Do not use project source locations as if they alone defined a
+language or framework-wide rule.
 
 ## 9. Publication mapping
 

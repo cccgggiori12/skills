@@ -37,6 +37,20 @@ Choose one operation:
 
 Do not assume one source document equals one Wiki page.
 
+For every new or substantially refreshed page, test whether it owns one searchable knowledge
+object. Split sections into separate pages when they answer different core questions, would be
+looked up under different titles, and remain useful on their own. Keep a supporting detail in its
+parent page when it has no meaningful standalone retrieval value. Do not use document length alone
+as the split criterion.
+
+Use this decision test:
+
+```text
+same core question and responsibility boundary -> one page
+independently reusable and searched by a different title -> split
+small supporting detail with no standalone retrieval value -> keep in parent
+```
+
 For one source with an obvious destination, proceed directly. Before a batch operation that merges, splits, renames, or restructures several pages, show a compact publication map and obtain confirmation.
 
 ### 3. Classify content independently
@@ -50,6 +64,28 @@ Use the smallest existing structure:
 
 Classification is independent from navigation. A basic syntax concept may live in `concepts/` without being linked to a project page. Add relationships only when the source material establishes a real relationship or the user requests one.
 
+For every `concepts/` page, separate the reusable concept from the project code that motivated it:
+
+- make the concept body understandable without requiring the originating project;
+- label retained code mappings with a heading such as `项目实例：<project/topic>` or an
+  equally explicit project-instance marker;
+- state that the project example is one implementation, not part of the general definition;
+- move project-specific call chains, parameter routing, state machines, and module
+  responsibilities to `project-understanding/`, leaving only a compact mapping and link;
+- distinguish concept sources from project source evidence in the verification section.
+
+Use this decision test:
+
+```text
+still true after removing the project name -> concept body
+illustrates how the concept lands in one codebase -> labeled project example
+only meaningful inside that codebase -> project-understanding
+```
+
+These are two independent checks: first decide whether the concept material contains more than one
+knowledge object; then separate each retained concept from its project example. A broad source
+document may therefore yield multiple concept pages, each with its own labeled project example.
+
 ### 4. Rewrite for later reading
 
 Convert learning order into knowledge order:
@@ -62,6 +98,9 @@ Convert learning order into knowledge order:
 6. keep a consolidated source list at the end, but never use that list as a substitute for in-place source locations;
 7. move detailed syntax, repeated exploration, and superseded explanations out of the main path;
 8. use links for optional depth instead of embedding every recursive explanation.
+
+For a concept page derived from project code, make the concept/example boundary visible near the
+top of the page. Do not let an unlabeled project example silently become the concept definition.
 
 Use natural topic-specific headings. Do not force every page into one template.
 
@@ -98,6 +137,10 @@ Never delete the original project learning documents as part of Wiki publication
 - Create or update a category `README.md` when that category contains real pages.
 - Link a page from the nearest useful index, but avoid redundant links in every index.
 - Prefer searchable filenames that name the knowledge object; remove learning-sequence names such as `文档3.1` from the Wiki title.
+- Organize the body as a minimum sufficient model by default, but do not append `最小模型`
+  to the title or filename merely to describe that writing style. Name the knowledge object or
+  core question directly; retain `模型` only when it is part of the subject itself or usefully
+  distinguishes the page from another artifact.
 
 ### 7. Verify
 
